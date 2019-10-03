@@ -11,12 +11,21 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("ML Observador",
+        title: Text("Pesquisar",
             style: TextStyle(color: Constants.secondaryColor)),
         backgroundColor: Constants.primaryColor,
       ),
       body: Container(
-        child: Text('oi'),
+        child: TextField(
+          decoration: InputDecoration(
+              filled: true,
+              fillColor: Colors.white,
+              prefixIcon: Icon(
+                Icons.search,
+                color: Constants.secondaryColor,
+              ),
+              hintText: 'Pesquise por algo:  Carro, Brinquedo...'),
+        ),
       ),
     );
   }
