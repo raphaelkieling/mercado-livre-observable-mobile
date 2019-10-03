@@ -12,6 +12,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void onPressEnter() async {
     await Storage.saveEmail(emailController.text);
+    Navigator.pushReplacementNamed(context, '/home');
   }
 
   @override
