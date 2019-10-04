@@ -26,6 +26,8 @@ dependencies:
   floating_search_bar: ^0.2.0
   transparent_image: ^1.0.0
   shared_preferences: ^0.4.3
+  url_launcher: ^5.1.4
+  charts_flutter: ^0.8.1
 
 dev_dependencies:
   flutter_test:

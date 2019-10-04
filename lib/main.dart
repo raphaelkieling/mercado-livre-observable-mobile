@@ -15,15 +15,14 @@ class Main extends StatelessWidget {
   bool isLogged;
 
   Main({this.isLogged});
-  /**
-   * References about routes
-   * 
-   * https://flutter.dev/docs/cookbook/navigation/named-routes
-   */
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       initialRoute: '/',
+      theme: new ThemeData(
+        canvasColor: Colors.transparent,
+      ),
       routes: {
         '/': (context) => isLogged ? HomeScreen() : LoginScreen(),
         '/home': (context) => HomeScreen(),

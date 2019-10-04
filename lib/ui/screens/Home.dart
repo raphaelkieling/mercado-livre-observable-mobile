@@ -5,8 +5,8 @@ import 'package:mercado_livre_observable_mobile/data/product_repository.dart';
 import 'package:mercado_livre_observable_mobile/domain/product.dart';
 import 'package:mercado_livre_observable_mobile/domain/use_case/product/get_all_use_case.dart';
 import 'package:mercado_livre_observable_mobile/ui/screens/Search.dart';
+import 'package:mercado_livre_observable_mobile/ui/widgets/EmptyList.dart';
 import 'package:mercado_livre_observable_mobile/ui/widgets/ProductCard.dart';
-import 'package:transparent_image/transparent_image.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -48,25 +48,45 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("ML Observador",
+        title: Text(Constants.appName,
             style: TextStyle(color: Constants.secondaryColor)),
         backgroundColor: Constants.primaryColor,
       ),
+      backgroundColor: Colors.white,
       body: null == _products
           ? Center(
               child: CircularProgressIndicator(
                 backgroundColor: Constants.secondaryColor,
               ),
             )
-          : RefreshIndicator(
-              child: ListView(
-                padding: const EdgeInsets.all(8.0),
-                children: _products.map((product) {
-                  return _buildItemProduct(product);
-                }).toList(),
-              ),
-              onRefresh: _getProducts,
-            ),
+          : 0 == _products.length
+              ? Center(
+                  child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    EmptyListWidget(),
+                    Padding(
+                      padding: EdgeInsets.all(5.0),
+                      child: RaisedButton(
+                        child: Text("Recarregar"),
+                        color: Constants.primaryColor,
+                        onPressed: () {
+                          _getProducts();
+                        },
+                      ),
+                    )
+                  ],
+                ))
+              : RefreshIndicator(
+                  child: ListView(
+                    padding: const EdgeInsets.all(8.0),
+                    children: _products.map((product) {
+                      return _buildItemProduct(product);
+                    }).toList(),
+                  ),
+                  onRefresh: _getProducts,
+                ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(

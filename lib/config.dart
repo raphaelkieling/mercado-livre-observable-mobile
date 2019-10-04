@@ -1,3 +1,3 @@
 mixin Config {
-  final apiUrl = 'https://mercado-livre-watch.herokuapp.com';
+  final apiUrl = 'mercado-livre-watch.herokuapp.com';
 }
