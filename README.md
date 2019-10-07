@@ -2,11 +2,12 @@
 
 A new Flutter project to use on class.
 
-<img src="./prints/modal.jpeg" width="150px">
-<img src="./prints/empty_products_search.jpeg" width="150px">
-<img src="./prints/modal_product.jpeg" width="150px">
-<img src="./prints/products_search.jpeg" width="150px">
-
+<div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+    <img src="./prints/modal.jpeg" width="150px" style="margin-left: 10px;">
+    <img src="./prints/empty_products_search.jpeg" width="150px" style="margin-left: 10px;">
+    <img src="./prints/modal_product.jpeg" width="150px" style="margin-left: 10px;">
+    <img src="./prints/products_search.jpeg" width="150px" style="margin-left: 10px;">
+</div>
 ## Getting Started
 
 This project is a starting point for a Flutter application.
