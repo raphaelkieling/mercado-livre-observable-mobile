@@ -2,10 +2,10 @@
 
 A new Flutter project to use on class.
 
-![](./prints/modal.jpeg)
-![](./prints/empty_products_search.jpeg)
-![](./prints/modal_product.jpeg)
-![](./prints/products_search.jpeg)
+<img src="./prints/modal.jpeg" width="150px">
+<img src="./prints/empty_products_search.jpeg" width="150px">
+<img src="./prints/modal_product.jpeg" width="150px">
+<img src="./prints/products_search.jpeg" width="150px">
 
 ## Getting Started
 
